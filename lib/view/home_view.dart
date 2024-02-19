@@ -35,17 +35,27 @@ class HomeView extends StatelessWidget {
                   );
                 case Status.COMPLETED:
                   return testDataController.searchDataList.value.items!.isEmpty
-                      ? const Center(child: Text("No data found"),)
+                      ? const Center(
+                    child: Text("No data found"),
+                  )
                       : Expanded(
-                      child: ListView.builder(
-                           itemCount:testDataController.searchDataList.value.items!.length,
-                          itemBuilder: (context,index){
-                            return ListTile(
-                              title: Text(testDataController.searchDataList.value.items![index].name.toString()),
-                              subtitle: Text(testDataController.searchDataList.value.items![index].fullName.toString()),
-                            );
-                          }
-                      ));
+                    child: ListView.builder(
+                        itemCount: testDataController
+                            .searchDataList.value.items!.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(testDataController
+                                .searchDataList.value.items![index].name
+                                .toString()),
+                            subtitle: Text(testDataController
+                                .searchDataList
+                                .value
+                                .items![index]
+                                .fullName
+                                .toString()),
+                          );
+                        }),
+                  );
               }
             })
           ],

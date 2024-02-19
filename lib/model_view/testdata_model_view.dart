@@ -21,11 +21,13 @@ class TestDataController extends GetxController {
   void setTestDataSearchList(TestDataModel value) => searchDataList.value = value;
   void setError(String value) => error.value = value;
 
-  void clearTestData(){
-    searchDataList.value.obs.close();
+
+
+@override
+  void onInit() {
+   print(searchDataList);
+    super.onInit();
   }
-
-
 
   void testDataSearchApi(String key) {
     setRxRequestStatus(Status.LOADING);

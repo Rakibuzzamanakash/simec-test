@@ -90,6 +90,9 @@ class NetworkApiServices extends BaseApiServices {
       case 405:
         dynamic responseJson = jsonDecode(response.body);
         return responseJson;
+      case 422:
+        dynamic responseJson = jsonDecode(response.body);
+        return responseJson;
       default:
         throw FetchDataException('Error accorded while communication with server ${response.statusCode}');
     }
