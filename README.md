@@ -4,9 +4,20 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+  project structure :
+  
+in this project i follow mvvm pattern . i saperate my data layer from business logic and ui.
+in data folder i manage my outer data i create get and post method here and handel api exception.
+in repository folder i call my search api .
+in model i create models for my data.
+in model view folder i kept my variable and i do my busyness logic there and 
+i keep my api data in a list ,later that i show it in my screen.
+in view i do my ui design 
 
-A few resources to get you started if this is your first Flutter project:
+in this project i used http package for api call and getx for state management.
+
+this is a simple app where i implement search functionality 
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
