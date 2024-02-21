@@ -32,13 +32,17 @@ class TestDataController extends GetxController {
   void testDataSearchApi(String key) {
     setRxRequestStatus(Status.LOADING);
 
-    _api.testDataApi(key).then((value) {
+    key.isNotEmpty
+        ? _api.testDataApi(key).then((value) {
       setRxRequestStatus(Status.COMPLETED);
       setTestDataSearchList(value);
     }).onError((error, stackTrace) {
+      print(error);
       setError(error.toString());
       setRxRequestStatus(Status.ERROR);
-    });
+    })
+        : searchDataList.value == null
+    ;
   }
 
 
