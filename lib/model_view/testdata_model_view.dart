@@ -37,11 +37,10 @@ class TestDataController extends GetxController {
       setRxRequestStatus(Status.COMPLETED);
       setTestDataSearchList(value);
     }).onError((error, stackTrace) {
-      print(error);
       setError(error.toString());
       setRxRequestStatus(Status.ERROR);
     })
-        : searchDataList.value == null
+        : searchDataList.close()
     ;
   }
 
